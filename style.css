@@ -1,0 +1,698 @@
+/*   
+A million thanks to the Monkey Do! team for providing this HTML5 WP reset to work from.
+
+
+Font-size: 16px; (1em)
+line-height: 24px; (1.5em)
+
+
+
+
+
+Theme Name: The HTML5 Reset Theme
+Theme URI: http://html5reset.org
+Description: A style-free theme to get you started on an HTML5-based Wordpress theme of your own.
+Author: Monkey Do!
+Author URI: http://monkeydo.biz
+Version: 1
+*/
+
+/*
+	HTML5 Reset Wordpress Theme :: style.css
+	----------------------------------------------------------
+	We have learned much from/been inspired by/taken code where offered from:
+	
+	Eric Meyer					:: http://ericmeyer.com
+	HTML5 Doctor				:: http://html5doctor.com
+	and the HTML5 Boilerplate	:: http://html5boilerplate.com
+	
+	Special thanks: The Wordpress theme owes its start to an empty theme authored 
+		by Chris Coyier & Jeff Starr: http://digwp.com
+	
+-------------------------------------------------------------------------------*/
+
+/* Let's default this puppy out
+-------------------------------------------------------------------------------*/
+
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}									
+
+article, aside, figure, footer, header, hgroup, nav, section {display: block;}
+
+/* Responsive images and other embedded objects
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites, like, say for Google Maps custom placemarkers. 
+   There has been a report of problems with standard Google maps as well, but we haven't been able to duplicate or diagnose the issue. */
+img,
+object,
+embed {max-width: 100%;}
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {overflow-y: scroll;}
+
+/* we use a lot of ULs that aren't bulleted. 
+	don't forget to restore the bullets within content. */
+ul {list-style: none;}
+
+blockquote, q {quotes: none;}
+
+blockquote:before, 
+blockquote:after, 
+q:before, 
+q:after {content: ''; content: none;}
+
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+
+del {text-decoration: line-through;}
+
+abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
+
+/* tables still need cellspacing="0" in the markup */
+table {border-collapse: collapse; border-spacing: 0;}
+th {font-weight: bold; vertical-align: bottom;}
+td {font-weight: normal; vertical-align: top;}
+
+hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+
+input, select {vertical-align: middle;}
+
+pre {
+	white-space: pre; /* CSS2 */
+	white-space: pre-wrap; /* CSS 2.1 */
+	white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+	word-wrap: break-word; /* IE */
+}
+
+input[type="radio"] {vertical-align: text-bottom;}
+input[type="checkbox"] {vertical-align: bottom; *vertical-align: baseline;}
+.ie6 input {vertical-align: text-bottom;}
+
+select, input, textarea {font: 99% sans-serif;}
+
+table {font-size: inherit; font: 100%;}
+ 
+/* Accessible focus treatment
+	people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active {outline: none;}
+
+small {font-size: 85%;}
+
+strong, th {font-weight: bold;}
+
+td, td img {vertical-align: top;} 
+
+/* Make sure sup and sub don't screw with your line-heights
+	gist.github.com/413930 */
+sub, sup {font-size: 75%; line-height: 0; position: relative;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {font-family: monospace, sans-serif;}
+
+/* hand cursor on clickable elements */
+.clickable,
+label, 
+input[type=button], 
+input[type=submit], 
+button {cursor: pointer;}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {margin: 0;}
+
+/* make buttons play nice in IE */
+button {width: auto; overflow: visible;}
+ 
+/* scale images in IE7 more attractively */
+.ie7 img {-ms-interpolation-mode: bicubic;}
+
+/* prevent BG image flicker upon hover */
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+
+/* let's clear some floats */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
+.clearfix:after { clear: both; }  
+.clearfix { zoom: 1; }  
+
+
+
+/* Ok, this is where the fun starts. <--- 	Monkey Do guys
+	I'll take it from here guys!  <--- 		oscarvmcg
+-------------------------------------------------------------------------------*/
+
+/* new Linux- and Windows-friendly sans-serif font stack: http://mky.be/fontstack */
+/* turning your 13 into 16 px, boys! */
+
+body {font: 18px "freight-text-pro", Freesans, sans-serif; line-height: 1.5em;}
+
+/* we like off-black for text */
+body, select, input, textarea {color: #333;}
+
+/* Custom text-selection colors */
+::-moz-selection{background: #287671; color: #B4DBD8; text-shadow: none;}
+::selection {background: #287671; color: #B4DBD8; text-shadow: none;} 
+
+/*	j.mp/webkit-tap-highlight-color */
+a:link {-webkit-tap-highlight-color: #fcd700;} 
+
+ins {background-color: #fcd700; color: #000; text-decoration: none;}
+mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: bold;}
+
+
+
+/* And here begins the Wordpress fun.
+-------------------------------------------------------------------------------*/
+
+/* Structural elements, macroscopic
+----------------------------------------*/
+
+* {
+	-webkit-box-sizing: border-box; 	/* Safari/Chrome, other WebKit */
+	-moz-	box-sizing: border-box;    	/* Firefox, other Gecko */
+			box-sizing: border-box;    	/* Opera/IE 8+ */
+	-webkit-font-smoothing: antialiased;
+	/*border: solid 1px black !important;*/
+}
+
+body {
+	/*background-image:url('images/retina_dust.png');*/
+}
+
+#wpadminbar {
+	display: none !important;    /* silly, but it's distracting me right now */
+}
+
+.page-wrap {width: 960px; margin: 0 auto; position: relative;}
+
+a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #638ab5;
+}
+
+a:hover {color: #333; background: #638ab5;}
+
+.inset {
+   -moz-box-shadow:    inset 0 5px 5px -5px #68736b;
+   -webkit-box-shadow: inset 0 5px 5px -5px #68736b;
+   box-shadow:         inset 0 5px 5px -5px #68736b;
+}
+
+.workshadow {
+		-webkit-box-shadow: 0 8px 6px -6px black;
+	  	-moz-	box-shadow: 0 8px 6px -6px black;
+	        	box-shadow: 0 8px 6px -6px black;
+}
+
+p {
+	clear: both;
+}
+
+/* Header styles - contains Title, Logo, and Nav
+---------------------------------------*/
+
+.topwrap {
+	width: 100%;
+	overflow: hidden;
+	height: 9em;
+	background-image:url('/content/billcosbysweater2.png');
+}
+
+.topnav {
+	
+	line-height: 1em;
+	font-family: "freight-sans-pro";
+	font-weight: bold;
+}
+
+
+.guide {
+	position: absolute;
+	left: 20%;
+	top: -2.5em;
+	margin-left: 1.5em;
+}
+
+.topnav ul li {
+	background: #FFF;
+	padding: 0.5em;
+	margin: 0.5em 0.5em 0 0;
+	float: left;
+	transition: background 0.2s;
+	-moz-transition: background 0.2s; /* Firefox 4 */
+	-webkit-transition: background 0.2s; /* Safari and Chrome */
+	-o-transition: background 0.2s; /* Opera */	
+}
+
+.topnav ul li:hover {
+	background: #638ab5;
+	cursor: pointer;
+}
+
+.topnav ul li:active {background: #A66838;}
+
+.topnav ul li a {color: #333; background: none;}
+.topnav ul li a:hover {background: none;}
+
+.social {
+	position: absolute;
+	right: 0;
+	top: -2.5em;
+	margin-right: 1.5em;
+}
+
+header {
+	overflow: hidden;
+	background: #ddd;
+	background: #fff;	
+	padding: 1.5em 1.5em;
+	transition: background 0.6s;
+	-moz-transition: background 0.6s; /* Firefox 4 */
+	-webkit-transition: background 0.6s; /* Safari and Chrome */
+	-o-transition: background 0.6s; /* Opera */
+}
+
+header:hover {
+	background: #638ab5;
+}
+
+header:active {background: #A66838;}
+
+hgroup h1 a {
+	text-decoration: none;
+	color: #333;	
+	font-weight: bold;
+	white-space:nowrap;
+	float: right;
+	font-family: "trajan-pro",sans-serif;
+	font-weight: 700;
+	line-height: 1.5em;
+	/*font-size: 2.25em;*/
+	font-size: 2.625em;
+	/*SUPER GIMMICKY 3D  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);*/
+}
+
+hgroup h1 a:hover {
+	color: #333;
+	background: none;
+}
+
+
+
+hgroup h2 {
+	white-space:nowrap;
+	font-weight: normal;
+	text-align: right;
+	float: right;
+	font-family: "freight-sans-pro";
+	line-height: 1.5em;
+	font-size: 1.375em;
+	margin-left: 1.5em;
+}
+
+hgroup {
+	width: 20%;
+	float: left;
+	margin: 0 1.5em 0 0;
+	text-align: right;
+	overflow: visible;
+}
+
+.mainlogo {
+	float: left;
+	margin-right: 1.5em;
+	height: 108px;
+	display: none;
+}
+
+.alt_small {
+	display: none;
+}
+
+.littleblurb {
+	clear: both;
+	border-top: solid 1px #FFF;
+	padding-top: 1.5em;
+	margin-bottom: 1.5em;
+	line-height: 1.5em;
+	font-size: 2em;
+	float: left;
+	text-align: left;
+	font-family: "freight-text-pro";
+	font-weight: 400;
+	font-style: italic;
+		width: 100%;
+}
+
+
+article {
+	margin-top: 1.5em;
+}
+
+article + article {
+	margin-top: 1.5em;
+}
+
+.post {
+	clear: both;
+	margin-left: 20%;
+	padding: 0 1.5em;
+	width: 80%;
+}
+
+.post > h2 {
+	line-height: 1.5em;
+	font-size: 2em;
+	float: left;
+	font-family: "freight-sans-pro";
+	font-weight: 700;
+
+}
+
+.post > h2 a {
+	background: none;
+	color: #333;
+	transition: background 0.2s;
+	-moz-transition: background 0.2s; /* Firefox 4 */
+	-webkit-transition: background 0.2s; /* Safari and Chrome */
+	-o-transition: background 0.2s; /* Opera */	
+
+}
+
+.post > h2 a:hover {
+	background: #638ab5;
+}
+
+.post .meta {
+	clear: both;
+	float: left;
+	font-size: 1em;
+	line-height: 1.5em;
+	color: #638ab5;
+}
+
+.post > h1 {
+	line-height: 1.5em;
+	font-size: 2em;
+	float: left;
+	font-family: "freight-text-pro";
+	font-weight: 700;
+}
+
+.entry, article {
+	clear: both;
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+}
+
+.entry p, article p {
+	text-align: left;
+	font-size: 1em;
+	line-height: 1.5em;
+	margin-bottom: 1em;
+}
+
+.entry p + p, article p + p { text-indent: 4em; }
+
+.entry .imgfixer + p {
+	text-indent: 0;
+}
+
+.imgfixer {
+	margin-top: 1.5em;
+	text-indent: 0 !important;
+}
+
+.entry-content {clear: both;}
+.entry-content a {}
+.entry-content a:hover {}
+
+#meta {}
+.postmetadata {
+}
+
+
+#sidebar {}
+
+.navgation {}
+.next-posts {}
+.prev-posts {}
+
+#searchform {}
+#s {}
+#searchsubmt {}
+
+#respond { 
+	width: 60%;
+	margin: 9em 0 0 20%;
+	padding: 0 1.5em;
+	display: none;
+	}
+	
+ol.commentlist {list-style: none;}
+ol.commentlist li {}
+ol.commentlist li.alt {}
+ol.commentlist li.bypostauthor {}
+ol.commentlist li.byuser {}
+ol.commentlist li.comment-author-admin {}
+ol.commentlist li.comment {border-bottom: 1px dotted #666; padding: 10px;}
+ol.commentlist li.comment div.comment-author {}
+ol.commentlist li.comment div.vcard {}
+ol.commentlist li.comment div.vcard cite.fn {font-style: normal;}
+ol.commentlist li.comment div.vcard cite.fn a.url {}
+ol.commentlist li.comment div.vcard img.avatar {float:right; margin: 0 0 10px 10px;}
+ol.commentlist li.comment div.vcard img.avatar-32 {}
+ol.commentlist li.comment div.vcard img.photo {}
+ol.commentlist li.comment div.vcard span.says {}
+ol.commentlist li.comment div.commentmetadata {}
+ol.commentlist li.comment div.comment-meta {font-size: 10px;}
+ol.commentlist li.comment div.comment-meta a {color: #ccc;}
+ol.commentlist li.comment p {}
+ol.commentlist li.comment ul {}
+ol.commentlist li.comment div.reply {font-size: 11px;}
+ol.commentlist li.comment div.reply a {font-weight: bold;}
+ol.commentlist li.comment ul.children {list-style: none; margin: 10px 0 0;}
+ol.commentlist li.comment ul.children li {}
+ol.commentlist li.comment ul.children li.alt {}
+ol.commentlist li.comment ul.children li.bypostauthor {}
+ol.commentlist li.comment ul.children li.byuser {}
+ol.commentlist li.comment ul.children li.comment {}
+ol.commentlist li.comment ul.children li.comment-author-admin {}
+ol.commentlist li.comment ul.children li.depth-2 {border-left: 5px solid #555; margin: 0 0 10px 10px;}
+ol.commentlist li.comment ul.children li.depth-3 {border-left: 5px solid #999; margin: 0 0 10px 10px;}
+ol.commentlist li.comment ul.children li.depth-4 {border-left: 5px solid #bbb; margin: 0 0 10px 10px;}
+ol.commentlist li.comment ul.children li.depth-5 {}
+ol.commentlist li.comment ul.children li.odd {}
+ol.commentlist li.even {background: #fff;}
+ol.commentlist li.odd {background: #f6f6f6;}
+ol.commentlist li.parent {border-left: 5px solid #111;}
+ol.commentlist li.thread-alt {}
+ol.commentlist li.thread-even {}
+ol.commentlist li.thread-odd {}
+
+
+#footer {
+	background:#638ab5;
+	color: #FFF;
+	float: left;
+	margin-left: 20%;
+	padding: 1.5em;
+	width: 80%;
+}
+
+#footer a {
+	color: #7e4037;
+}
+
+#footer a:hover {
+	color: #333;
+	background: #7e4037;
+}
+
+
+/* PAGES
+---------------*/
+
+.pagearticle {
+	margin: 3em 0 1.5em 0;
+}
+
+.pagearticle h2 {
+	font-family: "trajan-pro",sans-serif;
+	font-weight: 700;
+	line-height: 1.5em;
+	font-size: 2em;
+}
+
+.pagearticle h3 {
+	margin: 1.5em 0;
+
+}
+
+
+/* WORK page 
+----------------*/
+
+.workblog {
+	overflow: hidden;
+	width: 60%;
+	min-width: 300px;
+	max-width: 600px;
+	height: 200px;
+	margin: 1.5em 0;
+}
+
+.workblog a {
+
+}
+
+.pencilborder {
+	border: solid 1px #758ba3;
+}
+
+#refblog {
+	background-image:url('/content/workblog.png');
+}
+
+#refinseurope {
+	background-image:url('/content/workinseurop.png');
+}
+
+#reflbbt {
+	background-image:url('/content/worklbbt.png');
+}
+
+
+/* Print styles!
+-------------------------------------------------------------------------------*/
+@media print {
+
+
+
+}
+
+
+/* Media queries!
+-------------------------------------------------------------------------------*/
+
+/* Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
+@media (max-width: 1455px) {
+	
+header {
+}
+
+.topwrap {
+	height: 6em;
+}
+
+hgroup h1 a {
+	float: left;
+}
+
+hgroup h2 {
+	clear: both;
+	float: left;
+	margin: 0;
+}
+
+hgroup {
+	width: 50%;
+	float: left;
+	margin: 0;
+	text-align: left;
+	overflow: visible;
+}	
+
+.mainlogo {
+	display: none;
+}
+
+.alt_small {
+	display: none;
+}
+
+}
+
+@media (max-width: 750px) {
+
+.page-wrap {width: 95%; margin: 0 auto;}
+
+
+
+.topwrap {
+	height: 3em;
+}
+
+.guide {
+	left: 0;
+}
+
+hgroup h1 a {
+	padding-top: 0.6em;
+	font-size: 30px;
+}
+
+hgroup h2 {
+	font-size: 18px;
+}
+
+
+.littleblurb {
+	font-size: 16px;
+}
+
+.post {
+	margin-left: 0;
+	padding: 0 1.5em;
+	width: 100%;
+}
+
+.post > h2 {
+	line-height: 1.5em;
+	font-size: 22px;
+	float: left;
+	font-family: "freight-sans-pro";
+	font-weight: 700;
+
+}
+
+#footer {
+	text-align: right;
+	float: right;
+	width: 100%;
+}
+
+.work_rightside {
+	display: none;
+}
+
+}
+
+
+@media (max-width: 350px) {
+
+.page-wrap {width: 100%; margin: 0 auto;}
+
+.post {padding: 0 0.5em; margin: 1.5em 0;}
+
+}
+
+
+
+@media all and (orientation: portrait) {
+	
+}
+
+@media all and (orientation: landscape) {
+	
+}
+
+
+
+
